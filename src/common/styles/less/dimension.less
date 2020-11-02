@@ -1,0 +1,340 @@
+//多维分析公共样式
+
+//下拉选
+.yellow-select{
+    width:8rem;
+    .el-input__inner{
+        border: 1px solid #ff0;
+        color: #ff0;
+        background-color: #336851;
+    }
+    .el-input__inner:-ms-input-placeholder,.el-input__inner::-webkit-input-placeholder,.el-input__inner::-moz-placeholder{
+        color: #ff0 !important;
+    }
+    i{
+        color:#ff0 !important;
+    }
+    .el-input.is-focus{
+        .el-input__inner{
+            border-color:#ff0;
+        }
+    }
+}
+//.el-input{
+//    .el-input__inner{
+//        border: 1px solid #ff0;
+//        color: #ff0;
+//        background-color: #336851;
+//    }
+//}
+//
+//.el-select-dropdown{
+//    border: 1px solid #ff0;
+//    background-color: #336851;
+//    color:#ff0;
+//    .el-scrollbar{
+//        .el-select-dropdown__wrap{
+//            .el-select-dropdown__list{
+//                .selected {
+//                    color: #ff0;
+//                    font-weight: 700;
+//                }
+//                .el-select-dropdown__item{
+//                    color:#ff0;
+//                }
+//                .el-select-dropdown__item.hover{
+//                    background-color: #336851;
+//                }
+//            }
+//        }
+//    }
+//}
+//.popper__arrow:after{
+//    border-bottom-color: #ff0 !important;
+//}
+//.el-select-dropdown__empty{
+//    color:#ff0;
+//}
+//.el-cascader__dropdown{
+//    border: 1px solid #ff0;
+//    .el-cascader-panel{
+//        background-color: #336851;
+//        .el-cascader-menu{
+//            border-right: solid 1px #ff0;
+//            .el-cascader-node:hover,.el-cascader-node:focus{
+//                background-color: rgba(255,255,0,0.2);
+//            }
+//            .el-radio{
+//                color: #ff0;
+//                .el-radio__inner{
+//                    border: 1px solid #ff0;
+//                    background-color: rgba(255,255,0,0.2);
+//                }
+//            }
+//            .el-radio:hover{
+//                background-color: #336851;
+//            }
+//            .el-cascader-node__label,.el-cascader-node__postfix{
+//                color: #ff0;
+//            }
+//        }
+//
+//    }
+//}
+
+.el-input{
+    .el-input__inner{
+        border: 0;
+        color: #fff;
+        background-color: transparent;
+    }
+}
+
+.el-select-dropdown{
+    border: 1px solid #161F2E;
+    background-color: #083971;
+    color:#fff;
+    .el-scrollbar{
+        .el-select-dropdown__wrap{
+            .el-select-dropdown__list{
+                .selected {
+                    color: #fff;
+                    font-weight: 700;
+                }
+                .el-select-dropdown__item{
+                    color:#fff;
+                }
+                .el-select-dropdown__item.hover{
+                    background: linear-gradient(to right, #3CFFD4, #4AD8FF);
+                }
+            }
+        }
+    }
+}
+.popper__arrow{
+    display: none !important;
+}
+.el-select-dropdown__empty{
+    color:#fff;
+}
+
+.el-cascader__dropdown{
+    border: 1px solid #161F2E;
+    .el-cascader-panel{
+        background-color: #083971;
+        .el-cascader-menu{
+            border-right: solid 1px #161F2E;
+            .el-cascader-node:hover,.el-cascader-node:focus{
+                background: linear-gradient(to right, #3CFFD4, #4AD8FF);
+            }
+            .el-radio{
+                color: #fff;
+                .el-radio__inner{
+                    border: 1px solid #161F2E;
+                    background-color: rgba(22, 31, 46, .2);
+                }
+            }
+            .el-radio:hover{
+                background-color: #336851;
+            }
+            .el-cascader-node__label,.el-cascader-node__postfix{
+                color: #fff;
+            }
+        }
+
+    }
+}
+//表格
+.analysis-table{
+    width: 98%;
+    margin: auto;
+    color: #fff;
+    thead.is-group th{
+        color:#fff;
+        background:rgb(0, 66, 102);
+    }
+    .el-table__empty-block{
+        background:rgb(0, 66, 102);
+        .el-table__empty-text{
+            color:#fff;
+        }
+    }
+    table{
+        tr{
+            background-color: rgb(0, 66, 102);
+            .el-table_1_column_1 .is-center{
+                transition: rgb(0, 66, 102) .25s ease;
+            }
+        }
+    }
+}
+.el-table--enable-row-hover .el-table__body tr:hover>td{
+    background-color: rgb(0, 66, 102) !important;
+}
+.el-table__body tr:hover>td{
+    background-color: #c6cfdf!important;
+}
+
+.el-table__body tr.current-row>td{
+    background-color: #c6cfdf!important;
+}
+.el-table__body-wrapper::-webkit-scrollbar{
+    height: 8px; 
+    border-radius: 4px;
+    background:#fff;
+    border:1px solid rgba(255,255,255,0.2);
+}
+.el-table__body-wrapper::-webkit-scrollbar-thumb{
+    height: 8px; 
+    border-radius: 4px;
+    background:rgba(0,0,0,0.2);
+}
+
+
+.territory-data{
+    position: absolute;
+    top: 30px;
+    left: 6%;
+    display: flex;
+    z-index: 10;
+    &-left{
+        .territory-nav-li{
+            width: 140px;
+            height: 38px;
+            background-color: #005174;
+            border: 1px solid #003349;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 38px;
+            margin-bottom: 2px;
+            cursor: pointer;
+        }
+        .territory-nav-li:hover,.active{
+            background-color: #ff0;
+            color: #005174;
+            font-weight: 600;
+        }
+    }
+    &-right{
+        display:flex;
+        flex-direction:column;
+        margin-left:1rem;
+    }
+}
+.city-title{
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    width: 340px;
+    margin-left: -170px;
+    height: 40px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    background-color: #005174;
+    border: 1px solid #003349;
+    border-radius: 4px;
+}
+.city-select{
+    position: fixed;
+    right: 6%;
+    top: 85px;
+    z-index: 100;
+    display: flex;
+    .select{
+        width:8rem;
+        margin-right:1rem;
+    }
+}
+.city-right{
+    position: absolute;
+    right: 6%;
+    top: 100px;
+    display: flex;
+    flex-direction:column;
+    z-index: 10;
+}
+.center-chart{
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    margin-left: -35%;
+    width: 75%;
+    height: 80%;
+    z-index: 1;
+}
+.all-index-ul-li{
+    cursor: pointer;
+    border-radius: 4px;
+    width: 180px;
+    border: 1px solid #003349;
+    color: hsla(0,0%,100%,.7);
+    font-size: 12px;
+    padding: 10px 10px 10px 20px;
+    background-color: #005174;
+    .li-unit{
+        display:flex;
+        justify-content:space-between;
+        span{
+            color: #fff;
+            font-size: 20px;
+        }
+        div{
+            line-height: 26px;
+        }
+    }
+}
+body::-webkit-scrollbar{
+    width: 8px; 
+    border-radius: 4px;
+    background:#fff;
+    border:1px solid rgba(255,255,255,0.2);
+}
+body::-webkit-scrollbar-thumb{
+    width: 8px; 
+    border-radius: 4px;
+    background:rgba(0,0,0,0.2);
+}
+.line-content::-webkit-scrollbar{
+    width: 0px; 
+    border-radius: 4px;
+    background:rgba(0,255,255,0.2);
+    border:1px solid rgba(0,255,255,0.2);
+}
+/* 定义滚动条里面能上下移动的小方块 */
+.line-content::-webkit-scrollbar-thumb{
+    width: 0px; 
+    border-radius: 4px;
+    background:rgba(0,255,255,0.6);
+}
+
+// 地图城市名样式
+.amap-overlay-text-container {
+    display: block;
+    width: auto;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: transparent !important; 
+    padding: 2px 3px;
+    border: none !important; 
+    border-radius: 3px;
+}
+
+// 滚动样式
+.scroll-div::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+.scroll-div::-webkit-scrollbar-track {
+    background-color: rgba(0,81,116,.5);
+    border-radius: 2em;
+}
+.scroll-div::-webkit-scrollbar-thumb {
+    background-color: rgba(147, 153, 165, 0.4);
+    border-radius: 2em;
+}

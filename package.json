@@ -1,14 +1,28 @@
 {
-  "name": "multi-terminal-multi-page",
+  "name": "multi-terminal-single-page",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "create": "node ./config/create",
+    "gov": "vue-cli-service build --mode gov",
+    "govDev": "vue-cli-service serve --open --mode govDev",
+    "h5": "vue-cli-service build --mode h5",
+    "h5Dev": "vue-cli-service serve --open --mode h5Dev",
+    "ent": "vue-cli-service build --mode ent",
+    "entDev": "vue-cli-service serve --mode entDev",
+    "all":"npm run gov && npm run ent && npm run h5"
   },
   "dependencies": {
+    "amfe-flexible": "^2.2.1",
+    "axios": "^0.21.0",
     "core-js": "^3.6.5",
+    "element-ui": "^2.14.0",
+    "fastclick": "^1.0.6",
+    "postcss-pxtorem": "^5.1.1",
+    "vant": "^2.10.11",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"

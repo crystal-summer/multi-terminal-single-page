@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="142px" height="93px" viewBox="0 0 142 93" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.1 (81669) - https://sketch.com -->
+    <title>请选择模块属性</title>
+    <desc>Created with Sketch.</desc>
+    <g id="企业管理" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="档案配置---默认" transform="translate(-887.000000, -355.000000)">
+            <g id="请选择模块属性" transform="translate(887.000000, 355.000000)">
+                <rect id="矩形" stroke="#D0DFEB" stroke-width="2" fill="#FFFFFF" x="1" y="1" width="140" height="91" rx="2"></rect>
+                <rect id="矩形" fill="#E2EDF5" x="11" y="9" width="119" height="7"></rect>
+                <rect id="矩形" fill="#E2EDF5" x="11" y="21" width="20" height="63"></rect>
+                <rect id="矩形备份-2" stroke="#D0DFEB" stroke-width="2" fill="#FFFFFF" x="38" y="22" width="91" height="61" rx="2"></rect>
+                <text id="Aa" font-family="PingFangSC-Medium, PingFang SC" font-size="14" font-weight="400" fill="#CCDFED">
+                    <tspan x="44" y="39">Aa</tspan>
+                </text>
+                <text id="Aa备份" font-family="PingFangSC-Medium, PingFang SC" font-size="14" font-weight="400" fill="#CCDFED">
+                    <tspan x="75" y="39">Aa</tspan>
+                </text>
+                <text id="Aa备份-2" font-family="PingFangSC-Medium, PingFang SC" font-size="14" font-weight="400" fill="#CCDFED">
+                    <tspan x="106" y="39">Aa</tspan>
+                </text>
+                <path d="M44,47 L121.357422,47" id="直线-9" stroke="#E2EDF5" stroke-linecap="square" stroke-dasharray="2"></path>
+                <rect id="矩形" fill="#CCDFED" x="44" y="44" width="15" height="3"></rect>
+                <g id="左侧栏(显示)备份" transform="translate(72.000000, 53.000000)" fill="#CCDFED" fill-rule="nonzero">
+                    <polygon id="路径" points="4.78998947 10.4539857 13.1121576 1.96516566 11.3664322 0.184752619 0.00595872706 11.7709595 11.3664322 23.3571664 13.1891581 21.4982229 4.7887092 13.0879265 24.1935484 13.0879265 24.1935484 10.453988"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

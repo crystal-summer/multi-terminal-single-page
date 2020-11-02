@@ -1,0 +1,114 @@
+// base color
+$blue:#324157;
+$light-blue:#3A71A8;
+$red:#C03639;
+$pink: #E65D6E;
+$green: #30B08F;
+$tiffany: #4AB7BD;
+$yellow:#FEC171;
+$panGreen: #30B08F;
+$bordE9:#E9E9E9;
+$color85:rgba(0, 0, 0, 0.85);
+$color65:rgba(0, 0, 0, 0.65);
+$color5:rgba(0, 0, 0, 0.5);
+$color25:rgba(0, 0, 0, 0.25);
+$color1:rgba(0, 0, 0, 0.1);
+// sidebar
+$menuText:$color85;
+$menuSubText:$color5;
+$menuActiveText:#fff;
+$subMenuActiveText:$color85; // https://github.com/ElemeFE/element/issues/12951
+
+$menuBg:#fff;
+$menuHover:linear-gradient(to right,#1890FF,#35C3FF);
+$menuHoverText:#fff;
+$subMenuBg:#fff;
+$menuHoverBg:#fff;
+$menuHoverColor:#0091FF;
+
+$subMenuHover:linear-gradient(to right,#1890FF,#35C3FF);
+$fontColor:#0091FF;
+
+
+$sideBarWidth: 200px;
+
+$menuHeight: 40px;
+
+$svgFont: 16px;
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+  subMenuActiveText: $subMenuActiveText;
+  menuBg: $menuBg;
+  menuHover: $menuHover;
+  subMenuBg: $subMenuBg;
+  subMenuHover: $subMenuHover;
+  sideBarWidth: $sideBarWidth;
+}
+@mixin hovers {
+  &:hover,
+  &.active,
+  &.activeProp {
+    background: #eff8ff;
+    color: #0091ff;
+    i {
+      color: #0091ff;
+    }
+  }
+}
+
+@mixin title {
+  .prop_title {
+    height: 40px;
+    line-height: 40px;
+    color: $color25;
+    display: flex;
+    align-items: center;
+    min-width: 140px;
+    .prop_tit {
+      display: inline-block;
+      font-size: 16px;
+      color: $color85;
+      margin: 0 10px 0 5px;
+      height: 40px;
+    }
+    .svg-icon {
+      font-size: 21px;
+    }
+    i.strong {
+      color: #0091ff;
+      font-size: 18px;
+    }
+  }
+}
+
+@mixin bottomCom {
+  overflow-y: auto;
+  // &::-webkit-scrollbar {
+  //   display: none;
+  // }
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-track {
+      background-color: white;
+      border-radius: 2em;
+  }
+  &::-webkit-scrollbar-thumb {
+      background-color: rgba(147, 153, 165, 0.4);
+      border-radius: 2em;
+  }
+}
+
+@mixin flx-c{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.el-tooltip__popper {
+  max-width: 384px !important;
+}

@@ -1,0 +1,855 @@
+//pc端统一样式
+@import "./base.less";
+
+.flx-c{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flx-l{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.flx-b{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flx-a{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.flx-r{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.el-loading-mask {
+  z-index: 2007!important;
+}
+// 表格滚动样式
+/deep/.scroll-table {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: calc( 100% - 52px );
+  .el-table__body-wrapper {
+      height: calc( 100% - 50px );
+      overflow-y: auto;
+      // 滚动样式
+      &::-webkit-scrollbar {
+          width: 8px;
+          height: 8px;
+      }
+      &::-webkit-scrollbar-track {
+          background-color: white;
+          border-radius: 2em;
+      }
+      &::-webkit-scrollbar-thumb {
+          background-color: rgba(147, 153, 165, 0.4);
+          border-radius: 2em;
+      }
+  }
+}
+//页面公共样式
+.common-container{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background: #fff;
+    min-width: 1045px;
+    height: 100%;
+    /*头部公共筛选框*/
+    .common-header{
+        // padding: 20px;
+        padding: 0 20px 20px;
+        border-bottom: 1px solid #EBEEF5;
+        .select-row{
+            display: flex;
+            flex-wrap: nowrap;
+            margin-top: 16px;
+            .select-left,.select-right{
+              display: flex;
+            }
+            .select-right {
+              justify-content: flex-end;
+            }
+            // .select-right{
+            //     .select-item{
+            //         margin-right: 0;
+            //         margin-left: 24px;
+            //     }
+            // }
+            .select-item{
+                margin-right: 24px;
+            }
+            &:first-child{
+                margin-top: 0;
+            }
+            // .btns{
+            //     display: flex;
+            //     justify-content: flex-end;
+            //     .gov-btn{
+            //         margin-left: 16px;
+            //     }
+            // }
+        }
+        .jcsb{
+            justify-content: space-between;
+        }
+    }
+    /*表格头部上面的公共部分*/
+    .common-more{
+        padding:23px 54px 0px 25px;
+        flex-shrink: 0;
+        .flx-b;
+        //添加图标
+        .common-addIcon{
+            cursor: pointer;
+            color:@govEditText;
+            i{
+                font-size: 14px;
+            }
+        }
+        .right10{
+          margin-right:10px;
+         }
+         .left10{
+           margin-left:10px;
+         }
+    }
+    /*表格及分页公共样式*/
+    .common-table {
+        flex: 1;
+        position: relative;
+        padding: 12px 24px 24px;
+        background: #fff;
+        //隐藏暂无数据显示
+        /deep/.el-table__body td {
+            height: 48px;
+        }
+        .common-page {
+          position: absolute;
+          right: 0;
+          width:100%;
+          text-align:center;
+          button{
+            background:#fff;
+          }
+          li{
+            background-color: #FFF;
+          }
+          li:not(.disabled).active{
+            background-color: #FFF;
+            // color: #409EFF;
+          }
+        }
+        //table里面块
+        .common-tableStyle {
+          display: flex;
+          justify-content: space-between;
+          .common-block {
+            margin-right: 10px;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            font-size: 18px;
+          }
+          .common-text {
+            width: 400px;
+            text-align: left;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            margin-right: 10px;
+            i{
+              font-size: 16px;
+              color:red
+            }
+          }
+        }
+        //里面块的公共部分
+        tr:nth-child(2n-1) .common-tableStyle .common-block {
+          background: -webkit-linear-gradient(to top, @blockAtopColor, @blockAbotColor);
+          /* autoprefixer: on */
+          background: -moz-linear-gradient(to  top, @blockAtopColor, @blockAbotColor);
+          background: -ms-linear-gradient(to top, @blockAtopColor, @blockAbotColor);
+          background: -o-linear-gradient(to top, @blockAtopColor, @blockAbotColor);
+          background: linear-gradient(to top, @blockAtopColor, @blockAbotColor);
+        }
+        tr:nth-child(2n) .common-tableStyle .common-block {
+          background: -webkit-linear-gradient(to top, @blockBbotColor, @blockBtopColor);
+          /* autoprefixer: on */
+          background: -moz-linear-gradient(to top, @blockBbotColor, @blockBtopColor);
+          background: -ms-linear-gradient(to top, @blockBbotColor, @blockBtopColor);
+          background: -o-linear-gradient(to top, @blockBbotColor, @blockBtopColor);
+          background: linear-gradient(to top, @blockBbotColor, @blockBtopColor);
+        }
+        .right20 {
+          margin-right: 20px;
+        }
+        //发文机关，发布日期公共样式
+        .common-textStyle {
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+          margin-left: 30%;
+          &-firsFloor {
+            color: @titleColor;
+          }
+          &-secondFloor {
+            color: @textNormalColor;
+          }
+        }
+
+    }
+}
+//编辑按钮样式
+.editBtn{
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+    .common-addIcon{
+      line-height: 36px;
+    }
+}
+//删除按钮样式
+.gov-del-text{
+  color:#FF5435;
+}
+//草稿按钮样式
+.btn-drafts{
+    margin-right: 32px;
+    i{
+        margin-right: 5px;
+        font-size:14px;
+    }
+}
+
+//政策文件新增样式
+.form-container{
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 2px;
+    .title{
+      height: 56px;
+      line-height: 56px;
+      padding: 0 24px;
+      color: @titleColor;
+      font-size: 16px;
+      font-weight: bold;
+      border-bottom: 1px solid #ebeef5;
+    }
+    .form {
+        width: 740px;
+        margin: 0 auto;
+        padding: 29px 0 60px;
+        #editor{
+            width: 740px;
+        }
+        .upload-file{
+            display: flex;
+            margin-top: 15px;
+            margin-bottom: 40px;
+            color: #303133;
+            font-size: 14px;
+            .name{
+              margin-top: 1px;
+            }
+            .gov-UdBtn{
+              background: #fff;
+              border: 1px solid #D8DCE6;
+              color: @titleColor;
+              width: 106px;
+            }
+            .message {
+              margin-top: 5px;
+              color: #606266;
+            }
+        }
+        .push{
+          .btn-push{
+              display: flex;
+              align-items: center;
+              margin-bottom: 16px;
+              .el-checkbox{
+                  margin-right: 10px;
+                  margin-left: 0;
+              }
+              .message{
+                  color: @littleTitleColor;
+              }
+              .hand-push{
+                  padding: 9px 20px 9px 10px;
+                  margin-right: 10px;
+                  border-radius: 4px;
+                  border: 1px solid #DCDFE6;
+                  -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+                  line-height: normal;
+                  display: flex;
+                  align-items: center;
+                  height: 32px;
+                  i{
+                      display: inline-block;
+                      margin-top: 1px;
+                      margin-right: 10px;
+                      font-size: 16px;
+                  }
+              }
+              .active{
+                  color: #1989FA;
+                  border: 1px solid #1989FA;
+              }
+          }
+        }
+    }
+}
+
+//提交footer
+.submit-footer{
+  flex-shrink: 0;
+  height: 80px;
+  width: 100%;
+  bottom: 0;
+  background: #fff;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  border-top:1px solid #f2f6fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & .gov-btn{
+    width: 75px;
+  }
+}
+
+//预览dialog的样式
+.preview-detail{
+  color:@titleColor;
+  padding:0 30px 100px 30px;
+  &>div{
+    margin-bottom:20px;
+  }
+  .preview-title{
+    text-align: center;
+    font-size: 18px;
+    font-family: PingFangSC-Medium;
+  }
+  .preview-condition{
+    border:1px dashed #DCDFE6;
+    background: #F2F6FC;
+    color:@littleTitleColor;
+    font-size: 12px;
+    min-height:50px;
+    .flx-l;
+    flex-flow: row wrap;
+    padding:0 5% 0 10%;
+    .condition-li{
+      width: 33.3%;
+      height: 30px;
+      line-height: 30px;
+      text-align: left;
+      overflow: hidden;
+      text-overflow: ellipsis; //溢出省略号显示
+    }
+  }
+  .preview-html{
+    font-size: 14px;
+  }
+  .preview-link{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+//降低wangEditor富文本编辑框层级
+#editor{
+  /deep/.w-e-menu{
+    z-index: 2 !important;
+  }
+  /deep/.w-e-text-container{
+    z-index: 1 !important;
+  }
+}
+
+//级联选项框 公共样式
+.input-container{
+  min-height: 40px;
+  max-height: 90px;
+  //height: 83px;
+  display: flex;
+  align-items: center;
+  .tab-box{
+      width: 511px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      min-height: 33px;
+      max-height: 88px;
+      overflow-y: auto;
+      border-radius: 4px;
+      padding: 2px 7px 0;
+      border: 1px solid rgba(220, 223, 230, 1);
+      &::-webkit-scrollbar {
+          display: none;
+      }
+      .el-tag-add{
+          width: 65px;
+          height: 26px;
+          line-height: 26px;
+          margin-right: 12px;
+          text-align: center;
+          border: 1px dashed #4284F4;
+          border-radius: 4px;
+          color: #4284F4;
+          font-size: 15px;
+          margin-bottom: 2px;
+          cursor: pointer;
+      }
+      .el-tag--light{
+          height: 26px;
+          line-height: 26px;
+          margin-right: 12px;
+          background-color: rgba(66, 132, 244, 0.1);
+          color: #4284F4;
+          margin-bottom: 2px;
+      }
+  }
+}
+
+//手动推动框公共样式
+.manualPushVessel{
+  display: none;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  width: 400px;
+  height: 360px;
+  //display: flex;
+  flex-direction: column;
+  .screen-item{
+    padding:0 10px;
+    height: 45px;
+    border-bottom:1px solid #dcdfe6;
+    /deep/ .el-select{
+      width: 160px;
+    }
+  }
+  .screen-list{
+    flex: 1;
+    overflow-y: auto;
+    &-li{
+      height: 32px;
+      line-height: 32px;
+      padding: 0 10px;
+      margin: 0;
+      cursor:pointer;
+      width: 100%;
+      &:hover{
+        background: rgba(66, 132, 244, 0.1);
+      }
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+}
+
+//列表公共样式--企业档案
+.common-total-search{
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 15px;
+  background: #E6F1FC;
+  border-radius: 4px;
+  color: #606266;
+  margin-bottom:20px;
+  i{
+    color: #1B68FD;
+    font-size: 16px;
+    margin-right: 5px;
+  }
+}
+.common-list-div{
+    width:100%;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+    border: 1px solid #f6f6f6;
+    cursor:pointer;
+    margin-bottom: 20px;
+    &-title{
+      font-weight:bold;
+      font-size: 16px;
+      color: #303133;
+      padding: 10px 20px;
+    }
+    &-body{
+      display:flex;
+      flex-wrap:wrap;
+      padding: 0px 20px 10px;
+      &-li{
+        padding:5px;
+        margin-right:40px;
+        flex: 20%;
+        .li-name{
+          color: #606266;
+        }
+      }
+    }
+}
+.common-list-div:hover{
+  opacity:0.8;
+}
+
+//企业档案子组件公共样式
+.info-div{
+  width:100%;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+  margin-bottom:20px;
+  padding-bottom: 10px;
+  &-title{
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+      color: #000;
+      padding: 10px 0;
+  }
+  &-subtitle{
+      padding: 10px;
+      color: #000;
+      display: flex;
+      align-items: center;
+  }
+  &-subtitle:before{
+      content:'';
+      display:inline-block;
+      width: 0;
+      height: 15px;
+      border: 3px solid #409EFF;
+      border-radius: 4px;
+      margin-right: 10px;
+  }
+  &-body{
+      padding:10px 20px;
+      width:96%;
+      margin:auto;
+      .info-table{
+          width:100%;
+          border-spacing: 0;
+          tr{
+              th{
+                  padding: 5px 10px;
+                  background-color: #f7f9fc;
+                  color: #666;
+                  line-height: 20px;
+                  width: 16.6%;
+                  border: 1px solid #eee;
+                  font-size: 12px;
+                  text-align: center;
+                  font-weight: bold;
+              }
+              td{
+                  width: 16.6%;
+                  border: 1px solid #eee;
+                  font-size: 12px;
+                  color: #666;
+                  text-align: center;
+              }
+          }
+      }
+      .el-pagination{
+        text-align:center;
+      }
+  }
+}
+
+//无数据公共样式
+.noData{
+  height: 390px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  &-img{
+    width: 120px;
+    height: 200px;
+    background: url("~@/assets/inefficient/es-sfss.png") no-repeat;
+    background-size: 120px 200px;
+    margin-right: 60px;
+  }
+}
+
+//系统设置公共样式
+.tab-header{
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  border-bottom: 1px solid #ebeef5;
+  i{
+      height: 30px;
+      width: 33px;
+      line-height: 30px;
+      cursor: pointer;
+      text-align: right;
+      color: #1B68FD;
+  }
+}
+.tab-body{
+  padding: 15px;
+  .role-list{
+      margin-top: 20px;
+      height: 580px;
+      overflow-y: auto;
+      .role-li {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+          color: #606266;
+          width: 100%;
+          height: 30px;
+          .role-name {
+              flex: 1;
+              padding-left: 15px;
+          }
+          i {
+              height: 30px;
+              width: 33px;
+              display: inline-block;
+              line-height: 30px;
+              cursor: pointer;
+              font-size: 13px;
+              color: #8BB2FF;
+              text-align: center;
+          }
+      }
+      .role-li.li-active {
+          background: #F0F7FF;
+      }
+  }
+  .el-tag{
+      margin-right:20px;
+      margin-bottom: 10px;
+  }
+}
+
+//删除按钮样式
+.btn-del{
+  color:#F56C6C !important;
+}
+.btn-del:hover,.btn-del:focus{
+  color:#F56C6C !important;
+  opacity:0.8 !important;
+}
+
+//返回图片样式
+.return-back{
+  width:80px;
+  height:80px;
+  position:absolute;
+  right:5%;
+  top:0%;
+  background:url("../../../assets/inefficient/back-btn.png") no-repeat;
+  background-size:100% 100%;
+  z-index:1111;
+  cursor:pointer;
+}
+.left-back{
+  background:url("../../../assets/inefficient/back-btn.png") no-repeat;
+  background-size:100% 100%;
+  cursor:pointer;
+  width: 70px;
+  height: 70px;
+  margin-right:10px;
+}
+
+// 滚动样式
+.scroll-div::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scroll-div::-webkit-scrollbar-track {
+  background-color: white;
+  border-radius: 2em;
+}
+.scroll-div::-webkit-scrollbar-thumb {
+  background-color: rgba(147, 153, 165, 0.4);
+  border-radius: 2em;
+}
+
+.overFlowHid{//超出两行溢出
+  overflow: hidden;//超出文本隐藏
+  text-overflow: ellipsis; //溢出省略号显示
+  display:-webkit-box; //将对象作为弹性伸缩盒子
+  -webkit-box-orient:vertical; //设置伸缩盒子的子元素排列方式-从上到下垂直排列
+  -webkit-line-clamp: 2;
+}
+
+.overFlowHid1{  //超出一行溢出 显示省略号
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+//直报中心样式
+.report-center{
+  .info-div-title{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  .info-div-subtitle{
+    button{
+      margin-left:10px;
+    }
+  }
+  &-table{
+    tr{
+      th,td{
+        font-size:14px !important;
+        line-height:35px !important;
+      }
+    }
+  }
+  .info-div-add{
+    width: 94.6%;
+    border: 1px dashed #409EFF;
+    padding: 10px;
+    text-align: center;
+    color: #409EFF;
+    margin:10px auto;
+    cursor:pointer;
+    &-disabled {
+      border-color: gray!important;
+      cursor: not-allowed;
+      color: gray!important;
+    }
+    i{
+      margin-right:10px;
+    }
+  }
+}
+
+
+
+
+//关联弹出框样式
+.link_dialog {
+  .el-dialog__body {
+      .link_table {
+          flex-shrink: 0;
+          margin-right: 20px;
+          &:first-child {
+
+          }
+          /deep/.el-table {
+              margin-top: 5px;
+              .el-table--small td,
+              .el-table--small th {
+                  padding: 5px 0;
+                  .cell {
+                    min-width: 150px;
+                  }
+              }
+              .el-button--small {
+                  padding: 0;
+              }
+          }
+      }
+  }
+}
+
+//隐藏预览
+.hideView {
+  display: none;
+}
+
+//厂房出租合同  备案文件  样式
+.contract-file-list{
+  margin: 20px 0;
+  .contract-content{
+    display:flex;
+    color:#409EFF;
+    margin: 10px;
+    div{
+      margin-right:20px;
+    }
+    i{
+      margin-right:10px;
+    }
+    span{
+      cursor: pointer;
+      text-decoration: underline;
+      a{
+        color:#409EFF;
+      }
+    }
+  }
+}
+
+.warning-tip-td{
+  border:none !important;
+  color:red !important;
+  text-align:left !important;
+  i{
+      margin:0 10px;
+  }
+}
+
+.td-edit{
+  div{
+      position:relative;
+      span:nth-of-type(2){
+          position:absolute;
+          right:20px;
+          cursor:pointer;
+          i{
+              color:#409EFF;
+          }
+      }
+  }
+}
+.more-info {
+  min-width: 112px!important;
+  width: 112px;
+  min-height: 66px;
+  border-radius: 2px;
+  background-color: #fff;
+  padding: 12px 0;
+  box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.08);
+  .more-item {
+    z-index: 20;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.65);
+    background: #fff;
+    padding: 0 12px;
+    cursor: pointer;
+    &:hover {
+      background: #E0E7FF;
+    }
+  }
+}
+
+.image-slot {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 4px;
+  background: #f7f9fc;
+  text-align: center;
+}

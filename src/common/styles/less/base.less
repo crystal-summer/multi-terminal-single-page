@@ -1,0 +1,61 @@
+//编辑文字按钮
+@govEditText:#1989FA;
+
+//块的颜色
+@blockAtopColor:rgba(25, 185, 255, 1);
+@blockAbotColor:rgba(23, 154, 255, 1);
+@blockBtopColor:rgba(55, 88, 227, 1);
+@blockBbotColor:rgba(145, 175, 249, 1);
+@blockBoxBot:rgba(235, 245, 255, 0.3);
+
+//文字颜色
+@textNormalColor:#909399;
+@titleColor: #303133;
+@littleTitleColor:#606266;
+@whiteColor:#fff;
+@mainColor:#1B68FD;
+
+//直报
+@bgContentColor:rgba(253, 253, 254, 1);
+@textColor:#455467;
+@hoverColor:#5C7CEC;
+@tableCellColor:rgba(247,249,252,1);
+//返回按鈕
+.ys-back-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 2088;
+  top: 90px;
+  right: 90px;
+  background: url("../../../assets/inefficient/back-btn.png") no-repeat scroll center;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+//无数据
+.noData {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+  
+    .noData-img {
+      width: 120px;
+      height: 200px;
+      background: url("~@/assets/inefficient/es-sfss.png") no-repeat;
+      background-size: 120px 200px;
+      margin-right: 60px;
+  
+    }
+    .noData-desc {
+      color: rgba(157, 188, 223, 1);
+      font-size: 18px;
+  
+      p:last-child {
+        font-size: 16px;
+        margin-top: 10px;
+      }
+    }
+}

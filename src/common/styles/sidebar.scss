@@ -1,0 +1,304 @@
+#gov-container,#ent-container {
+
+  .main-container {
+    min-height: 100%;
+    // min-height: calc(100vh - 53px);
+    transition: margin-left .28s;
+    // margin-left: $sideBarWidth;
+    position: relative;
+    width: calc(100% - 200px);
+  }
+
+  .sidebar-container {
+    transition: width 0.28s;
+    width: $sideBarWidth !important;
+    // background-color: $menuBg;
+    height: 100%;
+    // position: fixed;
+    font-size: 0px;
+    // top: 64px;
+    // bottom: 0;
+    // left: 0;
+    z-index: 1001;
+    overflow: hidden;
+    height: calc(100vh - 64px);
+    box-shadow: 8px 0 5px -6px rgba(0,61,120,0.12);
+    //菜单未收缩时
+    .m-side-nav {
+      padding-bottom: 20px;
+      margin-bottom: 10px;
+      position: relative;
+      &:not(:nth-child(1)):before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: 24px;
+        width: 205px;
+        height: 1px;
+        background: rgba(0, 25, 49, 0.1);
+      }
+      .m-side-body .el-menu .menu-wrapper {
+        &>a {
+          .el-menu-item {
+            display: flex;
+            align-items: center;
+            height: $menuHeight !important;
+            line-height: $menuHeight !important;
+            color:$menuText !important;
+            svg {
+              font-size: $svgFont;
+            }
+            &:hover {
+              color:$menuHoverText !important;
+            }
+          }
+          .is-active {
+            color:$menuHoverText !important;
+            background: $menuHover !important;
+          }
+
+        }
+        //有菜单层级关系时
+        &>.el-submenu .el-submenu__title {
+          height: $menuHeight !important;
+          line-height: 39px !important;
+          color:$menuText !important;
+          &:hover {
+            color:$menuHoverText !important;
+          }
+        }
+        &>.el-submenu .el-menu {
+          color:$menuSubText !important;
+          .el-menu-item {
+            color:$menuSubText !important;
+            i{
+              margin-right: 16px;
+              font-size: 14px;
+            }
+            &:hover {
+              color:$menuHoverText !important;
+              i{
+                color:$menuHoverText !important;
+              }
+            }
+          }
+          .is-active {
+            color:$menuHoverText !important;
+          }
+        }
+      }
+    }
+    // reset element-ui css
+    .horizontal-collapse-transition {
+      transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
+    }
+
+    .scrollbar-wrapper {
+      overflow-x: hidden !important;
+    }
+
+    .el-scrollbar__bar.is-vertical {
+      right: 0px;
+    }
+
+    .el-scrollbar {
+      height: 100%;
+      max-height: calc(100vh - 64px);
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &.has-logo {
+      .el-scrollbar {
+        height: calc(100% - 64px);
+      }
+    }
+
+    .is-horizontal {
+      display: none;
+    }
+
+    a {
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .svg-icon {
+      margin-right: 16px;
+    }
+
+    .el-menu {
+      border: none;
+      height: 100%;
+      width: 100% !important;
+    }
+    // menu hover
+    .submenu-title-noDropdown,
+    .el-submenu__title {
+      &:hover {
+        background: $menuHover !important;
+        color: $menuHoverText !important;
+      }
+    }
+    
+    .is-active>.el-submenu__title {
+      color: $subMenuActiveText !important;
+      &:hover{
+        color: $menuHoverText;
+      }
+    }
+    & .nest-menu .el-submenu>.el-submenu__title,
+    & .el-submenu .el-menu-item {
+      min-width: $sideBarWidth !important;
+      background-color: $subMenuBg !important;
+      &.is-active{ //被选中的item
+        background: $subMenuHover !important;
+      }
+      &:hover {
+        background: $subMenuHover !important;
+        color:$menuHoverText !important;
+      }
+    }
+  }
+
+  .hideSidebar { // 隐藏菜单栏
+    .sidebar-container {
+      width: 54px !important;
+    }
+
+    .main-container {
+      // margin-left: 54px;
+    }
+
+    .submenu-title-noDropdown {
+      padding: 0 !important;
+      position: relative;
+
+      .el-tooltip {
+        padding: 0 !important;
+
+        .svg-icon {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    .el-submenu {
+      overflow: hidden;
+
+      &>.el-submenu__title {
+        padding: 0 !important;
+
+        .svg-icon {
+          margin-left: 20px;
+        }
+
+        .el-submenu__icon-arrow {
+          display: none;
+        }
+      }
+    }
+
+    .el-menu--collapse {
+      .el-submenu {
+        &>.el-submenu__title {
+          &>span {
+            height: 0;
+            width: 0;
+            overflow: hidden;
+            visibility: hidden;
+            display: inline-block;
+          }
+        }
+      }
+    }
+    .main-container{
+      width: calc(100% - 54px);
+    }
+  }
+
+  .el-menu--collapse .el-menu .el-submenu {
+    min-width: $sideBarWidth !important;
+  }
+
+  // mobile responsive
+  .mobile {
+    .main-container {
+      margin-left: 0px;
+    }
+
+    .sidebar-container {
+      transition: transform .28s;
+      width: $sideBarWidth !important;
+    }
+
+    &.hideSidebar {
+      .sidebar-container {
+        pointer-events: none;
+        transition-duration: 0.3s;
+        transform: translate3d(-$sideBarWidth, 0, 0);
+      }
+    }
+  }
+
+  .withoutAnimation {
+
+    .main-container,
+    .sidebar-container {
+      transition: none;
+    }
+  }
+}
+
+// when menu collapsed
+.el-menu--vertical {
+  &>.el-menu {
+    .svg-icon {
+      margin-right: 16px;
+    }
+  }
+//菜单栏关闭时 有层级菜单的菜单样式
+  .nest-menu .el-submenu>.el-submenu__title,
+  .el-menu-item {
+    color: rgba(0,0,0,0.5) !important;
+    height: $menuHeight;
+    line-height: $menuHeight;
+    i{
+      margin-right: 16px;
+    }
+    &.is-active{ //被选中的item
+      background: $subMenuHover !important;
+      color:$menuHoverText !important;
+    }
+    &:hover {
+      // you can use $subMenuHover
+      background: $menuHover !important;
+      color:$menuHoverText !important;
+      i{
+        color:$menuHoverText !important;
+      }
+    }
+  }
+
+  // the scroll bar appears when the subMenu is too long
+  >.el-menu--popup {
+    max-height: 100vh;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar-track-piece {
+      background: #d3dce6;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #99a9bf;
+      border-radius: 20px;
+    }
+  }
+}
